@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <div class="container-fluid heading">
+        <div class="container navcontainer" id="navcontainer">
+            <nav class="navbar navbar-expand-sm">
+                <div class="left">
+                    <i class="fa fa-gg-circle" aria-hidden="true"></i> <a href="#">Crypto Coders </a>
+                </div>
+
+                <!------------------- Toggler/collapsibe Button -------------------------------------->
+                <button class="navbar-toggler barsbtn" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                </button>
+                <div class="collapse navbar-collapse middle" id="collapsibleNavbar">
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutus">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Who Are You
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
+                              <a class="dropdown-item" href="#">Manufacturer</a>
+                              <a class="dropdown-item" href="#">Supplier</a>
+                             
+                              <a class="dropdown-item" href="#">Customer</a>
+                            </div>
+                          </li>
+                     
+
+                    </ul>
+                </div>
+
+            </nav>
+
+        </div>
+        <div class="container mainheading">
+            <div class="info" data-aos="fade-up">
+
+                <div class="infochild">
+
+                    <h1>Most Secure way to track Your Products</h1>
+
+
+                    <p>We create transperancy in the authenticity of the original product and eliminate pirated products
+                        in
+                        the market.</p>
+
+                </div>
+                <div class="form">
+                    <div action="#" id="formid">
+                        <div class="form-group productiddiv">
+                            <!-- <i class="fa fa-user"></i>&nbsp;&nbsp;<label>Username: </label> -->
+                            <input type="text" class="form-control" placeholder="Enter your Product ID" id="product_search_bar">
+                            <button class="btn searchbtn btn-danger" data-target="#searchme"
+                                data-toggle="modal" onclick="searchproduct">Search</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success" id="product" data-toggle="modal" data-target="#addme">Add
+                        product</button>
+                    <button class="btn btn-success" id="suppbtn" data-toggle="modal" data-target="#addstate">Add
+                        State</button>
+
+                    <div class="modal modal-login fade" id="addme">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="text-center text-primary">Add product</h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div>
+                                        <div class="form-group">
+                                            <label>Product name: </label>
+                                            <input type="text" class="form-control" id="product_name_field">
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label>Date of manufacture: </label>
+                                            <input type="text" class="form-control" id="product_manufacture_date_field">
+                                        </div>
+
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-dismiss="modal" onclick="addproduct()">Add product</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                      </div>
+                    <div class="modal modal-login fade" id="addstate">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="text-center text-primary">Add State</h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label>State </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+
+                                     
+
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-dismiss="modal">Add State</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+
+                <!---------------------------Search Modal----------------------->
+
+                <div class="modal fade" id="searchme">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="text-center text-primary">Details</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p style="color: black;" id="product_search_result">Modal body text goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid titlecont" id="services">
+
+        <div class="container titlecontchild" id="aboutus">
+            <div class="title1 titlechild">
+                <div class="titleinfo" data-aos="fade-right">
+
+                    <h3><span>Mana</span>geable</h3>
+                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                    <p>We have implemented a distributed system in which the records of all the product to the suppliers
+                        are recorded in the blockchain.
+                    </p>
+                    <!-- <button class="btn titlebtn">Read More</button> -->
+                </div>
+            </div>
+            <div class="title2 titlechild" data-aos="flip-up">
+
+                <div class="titleinfo">
+                    <h3><span>Tran</span>sparency</h3>
+                    <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i></a>
+                    <p>
+                        Applying blockchain in the supply chain industry. This creates transparency and helps cleaning
+                        the fake products.
+
+
+                    </p>
+                    <!-- <button class="btn titlebtn">Read More</button> -->
+                </div>
+            </div>
+            <div class="title3 titlechild" data-aos="fade-left">
+
+                <div class="titleinfo">
+                    <h3><span>Assu</span>rance</h3>
+                    <a href="#"><i class="fa fa-envira" aria-hidden="true"></i></a>
+
+                    <p>This system will create transparency and will reduce the time and complexity involved in managing
+                        the finance of the company.</p>
+                    <!-- <button class="btn titlebtn">Read More</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal modal-signup fade" id="signup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center text-primary">Sign Up</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>&nbsp;&nbsp;<label>Username: </label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;
+                            <label>Password: </label>
+                            <input type="password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;
+                            <label>Email: </label>
+                            <input type="email" class="form-control" placeholder="example@gmail.com">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal">Signup</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-login fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center text-primary">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>&nbsp;&nbsp;<label>Email: </label>
+                            <input type="email" class="form-control" placeholder="example@gmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;
+                            <label>Password: </label>
+                            <input type="password" class="form-control">
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal">Login</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- .......................Cards Section................................ -->
+
+
+    <!----------------------------------------Footer--------------------------------------->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Wallet</a></li>
+                        <li><a href="#">Prices</a></li>
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sign up</h4>
+                    <div class="in">
+
+                        <input type="text" class="form-control" placeholder="Enter email id">
+
+                    </div>
+
+
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="end">&copy; Copyright 2021 Created for Digital Assets. All rights reserved.</footer>
+
+    </footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+
+        let role = document.getElementById('dropdown-menu').querySelectorAll('.dropdown-item');
+        role.forEach((e)=>{
+            e.addEventListener('click',()=>{
+                let rolename = e.innerText;
+                if(rolename=="Manufacturer"){
+                    document.getElementById('product').style.display = 'initial'
+                    document.getElementById('formid').style.display = 'none'
+                    document.getElementById('suppbtn').style.display = 'none'
+                }
+                else if(rolename=="Supplier"){
+                    document.getElementById('product').style.display = 'none'
+                    document.getElementById('formid').style.display = 'none'
+                    document.getElementById('suppbtn').style.display = 'initial'
+
+                }
+                else{
+                    document.getElementById('product').style.display = 'none'
+document.getElementById('formid').style.display = 'initial'
+document.getElementById('suppbtn').style.display = 'none'
+                }
+            })
+        })
+        console.log(role)
+
+        // blockchain ini
+        var contractAbi = [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "index",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Added",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "product",
+                        "type": "string"
+                    }
+                ],
+                "name": "ProductFound",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "info",
+                        "type": "string"
+                    }
+                ],
+                "name": "StateAdded",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_productId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "info",
+                        "type": "string"
+                    }
+                ],
+                "name": "addState",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_a",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_b",
+                        "type": "string"
+                    }
+                ],
+                "name": "concat",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_text",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_date",
+                        "type": "string"
+                    }
+                ],
+                "name": "newItem",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_productId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "searchProduct",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+            web3 = new Web3(new Web3.providers.HttpProvider('HTTP://127.0.0.1:7545'));
+        } else {
+            web3 = new Web3(new Web3.providers.HttpProvider('HTTP://127.0.0.1:7545'));
+        }
+
+        var SupplyChain = new web3.eth.Contract(contractAbi);
+        var bytecode = "6080604052600060015534801561001557600080fd5b50610e2a806100256000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633cde01b514610051578063453bccb61461009557806389c19ddb14610170578063a3d835c01461033b575b600080fd5b61007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506104a3565b60405180821515815260200191505060405180910390f35b610158600480360360408110156100ab57600080fd5b8101908080359060200190929190803590602001906401000000008111156100d257600080fd5b8201836020820111156100e457600080fd5b8035906020019184600183028401116401000000008311171561010657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610880565b60405180821515815260200191505060405180910390f35b6102c06004803603604081101561018657600080fd5b81019080803590602001906401000000008111156101a357600080fd5b8201836020820111156101b557600080fd5b803590602001918460018302840111640100000000831117156101d757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561023a57600080fd5b82018360208201111561024c57600080fd5b8035906020019184600183028401116401000000008311171561026e57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610a42565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103005780820151818401526020810190506102e5565b50505050905090810190601f16801561032d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61048b6004803603604081101561035157600080fd5b810190808035906020019064010000000081111561036e57600080fd5b82018360208201111561038057600080fd5b803590602001918460018302840111640100000000831117156103a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561040557600080fd5b82018360208201111561041757600080fd5b8035906020019184600183028401116401000000008311171561043957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610b98565b60405180821515815260200191505060405180910390f35b60006001548211156104b457600080fd5b60606040518060400160405280600e81526020017f50726f64756374204e616d653a2000000000000000000000000000000000000081525090506105a5816000808681526020019081526020016000206001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561059b5780601f106105705761010080835404028352916020019161059b565b820191906000526020600020905b81548152906001019060200180831161057e57829003601f168201915b5050505050610a42565b90506105e6816040518060400160405280601681526020017f3c62723e4d616e756661637475726520446174653a2000000000000000000000815250610a42565b905061069f816000808681526020019081526020016000206003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106955780601f1061066a57610100808354040283529160200191610695565b820191906000526020600020905b81548152906001019060200180831161067857829003601f168201915b5050505050610a42565b905060005b600080858152602001908152602001600020600401548110156107d9576107ca826107c56040518060400160405280600481526020017f3c62723e0000000000000000000000000000000000000000000000000000000081525060008089815260200190815260200160002060050160008681526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107bb5780601f10610790576101008083540402835291602001916107bb565b820191906000526020600020905b81548152906001019060200180831161079e57829003601f168201915b5050505050610a42565b610a42565b915080806001019150506106a4565b507f2b3b50ee1d52019914f86b5609f777b07a566f3f668633874c83d51b03e54ba5816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561083c578082015181840152602081019050610821565b50505050905090810190601f1680156108695780820380516001836020036101000a031916815260200191505b509250505060405180910390a16001915050919050565b600060015483111561089157600080fd5b610899610ce2565b60405180604001604052808481526020013373ffffffffffffffffffffffffffffffffffffffff168152509050806000808681526020019081526020016000206005016000806000888152602001908152602001600020600401548152602001908152602001600020600082015181600001908051906020019061091e929190610d12565b5060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555090505060016000808681526020019081526020016000206004015401600080868152602001908152602001600020600401819055507f4a40efe6d6dbcf2db778904c2a1cc0a6a786fb600509da6ec117defea292fcb2836040518080602001828103825283818151815260200191508051906020019080838360005b838110156109fd5780820151818401526020810190506109e2565b50505050905090810190601f168015610a2a5780820380516001836020036101000a031916815260200191505b509250505060405180910390a1600191505092915050565b60608083905060608390506060815183510167ffffffffffffffff81118015610a6a57600080fd5b506040519080825280601f01601f191660200182016040528015610a9d5781602001600182028036833780820191505090505b50905060608190506000805b8551811015610b1757858181518110610abe57fe5b602001015160f81c60f81b838380600101945081518110610adb57fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053508080600101915050610aa9565b5060005b8451811015610b8957848181518110610b3057fe5b602001015160f81c60f81b838380600101945081518110610b4d57fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053508080600101915050610b1b565b50819550505050505092915050565b6000610ba2610d92565b6040518060a001604052803373ffffffffffffffffffffffffffffffffffffffff16815260200185815260200160015481526020018481526020016000815250905080600080600154815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001019080519060200190610c5c929190610d12565b50604082015181600201556060820151816003019080519060200190610c83929190610d12565b506080820151816004015590505060018054016001819055507f64a55044d1f2eddebe1b90e8e2853e8e96931cefadbfa0b2ceb34bee3606194160018054036040518082815260200191505060405180910390a1600191505092915050565b604051806040016040528060608152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610d5357805160ff1916838001178555610d81565b82800160010185558215610d81579182015b82811115610d80578251825591602001919060010190610d65565b5b509050610d8e9190610dd7565b5090565b6040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001606081526020016000815260200160608152602001600081525090565b5b80821115610df0576000816000905550600101610dd8565b509056fea2646970667358221220c788a91df39b3796ad18690835460d8487cd2394cb11df60eca6ab031583a91f64736f6c634300060c0033";
+
+        let sender = '0xa365c33F912652Fe8Ab20E608268658A5cd79cB2';
+
+        var newContract = SupplyChain.deploy({data:bytecode}).send({
+                from: sender,
+                gas: web3.utils.toHex(6721975),
+                gasPrice: '2000000000'
+            }, (err, transactionHash) => {
+                console.log('Transaction Hash :', transactionHash);
+            }).on('confirmation', () => {}).then((newContractInstance) => {
+                console.log('Deployed Contract Address : ', newContractInstance.options.address);
+                SupplyChain.options.address = newContractInstance.options.address;
+            });
+
+        
+
+        function addproduct() {
+
+            console.log(document.getElementById("product_name_field").value);
+            console.log(document.getElementById("product_manufacture_date_field").value);
+
+            SupplyChain.methods.newItem(document.getElementById("product_name_field").value, document.getElementById("product_manufacture_date_field").value)
+                .send({
+                    from: sender,
+                    gas: web3.utils.toHex(6721975),
+                    gasPrice: '2000000000'
+                }, function(error, transactionHash){
+                    console.log('Transaction Hash :', transactionHash);
+                })
+                .then(function(receipt2){
+                    console.log("product id: " + receipt2.events.Added.returnValues[0]);
+                });
+        }
+
+        function searchproduct() {
+            console.log("hey " + parseInt(document.getElementById("product_search_bar").value));
+            SupplyChain.methods.searchProduct(parseInt(document.getElementById("product_search_bar").value))
+                .send({
+                    from: sender,
+                    gas: web3.utils.toHex(6721975),
+                    gasPrice: '2000000000'
+                }, function(error, transactionHash){
+                    console.log('Transaction Hash :', transactionHash);
+                })
+                .then(function(receipt3){
+                    console.log("result search product");
+                    console.log(receipt3.events.ProductFound.returnValues[0])
+                    document.getElementById("product_search_result").innerHTML = receipt3.events.ProductFound.returnValues[0];
+                });
+        }
+        
+
+    </script>
+
+</body>
+
+</html>
