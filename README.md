@@ -44,7 +44,7 @@ Transport providers will be able to post information about availability of stori
 
 Please refer to the powerpoint presentation attached for details along with pictorical representation and detailing information etc...
 
-## Progress
+## Solution Detailing Information
 We have developed the implementation of supply chain process in Etherium Smart contract. Which has following options:
 - Manufacturer - Can add a Product
 - Supplier - Can add state / position to given product
